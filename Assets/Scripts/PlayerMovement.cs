@@ -21,7 +21,10 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D myRigidbody;
     // Variable guardar las animaciones.
     Animator myAnimator;
-    private CapsuleCollider2D myCapsuleCollider2D;
+    
+    BoxCollider2D myFeetCollider;
+    
+    CapsuleCollider2D myCapsuleCollider2D;
     
     // Start is called before the first frame update
     void Start()
@@ -30,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
         myRigidbody = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
         myCapsuleCollider2D = GetComponent<CapsuleCollider2D>();
+        myFeetCollider = GetComponent<BoxCollider2D>();
         // Guardamos el valor de la gravedad que está en las físicas.
         gravityScaleAtStart = myRigidbody.gravityScale;
     }
@@ -50,7 +54,7 @@ public class PlayerMovement : MonoBehaviour
 
     void OnJump(InputValue value)
     {
-        if (!myCapsuleCollider2D.IsTouchingLayers(LayerMask.GetMask("Ground")))
+        if (!myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Ground")))
         {
             return;
         }
@@ -83,7 +87,7 @@ public class PlayerMovement : MonoBehaviour
 
     void ClimbLadder()
     {
-        if (!myCapsuleCollider2D.IsTouchingLayers(LayerMask.GetMask("Climbing")))
+        if (!myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Climbing")))
         {
             myRigidbody.gravityScale = gravityScaleAtStart;
             myAnimator.SetBool("isClimbing", false);
