@@ -14,6 +14,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float climbSpeed = 5f;
     // Variable para guardar la gravedad que hay en el juego.
     [SerializeField] float gravityScaleAtStart;
+
+    [SerializeField] Vector2 deathKick = new Vector2(10f, 10f);
+    [SerializeField] GameObject bullet;
+    [SerializeField] Transform gun;
     
     // Variable para guardar el movimiento del jugador.
     Vector2 moveInput;
@@ -24,7 +28,9 @@ public class PlayerMovement : MonoBehaviour
     
     BoxCollider2D myFeetCollider;
     
-    CapsuleCollider2D myCapsuleCollider2D;
+    CapsuleCollider2D myBodyCollider;
+
+    bool isAlive = true;
     
     // Start is called before the first frame update
     void Start()
@@ -32,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
         // Instancias
         myRigidbody = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
-        myCapsuleCollider2D = GetComponent<CapsuleCollider2D>();
+        myBodyCollider = GetComponent<CapsuleCollider2D>();
         myFeetCollider = GetComponent<BoxCollider2D>();
         // Guardamos el valor de la gravedad que está en las físicas.
         gravityScaleAtStart = myRigidbody.gravityScale;
@@ -41,19 +47,45 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!isAlive)
+        {
+            return;
+        }
+
         Run();
         FlipSprite();
         ClimbLadder();
+        Die();
+    }
+
+    void OnFire(InputValue value)
+    {
+        if (!isAlive)
+        {
+            return;
+        }
+
+        Instantiate(bullet, gun.position, transform.rotation);
     }
 
     void OnMove(InputValue value)
     {
+        if (!isAlive)
+        {
+            return;
+        }
+        
         moveInput = value.Get<Vector2>();
         Debug.Log(moveInput);
     }
 
     void OnJump(InputValue value)
     {
+        if (!isAlive)
+        {
+            return;
+        }
+        
         if (!myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Ground")))
         {
             return;
@@ -99,5 +131,16 @@ public class PlayerMovement : MonoBehaviour
 
         bool playerHasHorizontalSpeed = Mathf.Abs(myRigidbody.velocity.y) > Mathf.Epsilon;
         myAnimator.SetBool("isClimbing", playerHasHorizontalSpeed);
+    }
+
+    void Die()
+    {
+        if (myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemies", "Hazards")))
+        {
+            isAlive = false;
+            myAnimator.SetTrigger("Dying");
+            myRigidbody.velocity = deathKick;
+            FindObjectOfType<GameSession>().ProcessPlayerDeath();
+        }
     }
 }
