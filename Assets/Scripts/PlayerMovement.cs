@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
+    
     // Velocídad en la que se mueve el jugador.
     [SerializeField] float runSpeed = 10f;
     // Velocidad en que se mueve al saltar.
@@ -14,7 +15,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float climbSpeed = 5f;
     // Variable para guardar la gravedad que hay en el juego.
     [SerializeField] float gravityScaleAtStart;
-
     [SerializeField] Vector2 deathKick = new Vector2(10f, 10f);
     [SerializeField] GameObject bullet;
     [SerializeField] Transform gun;
@@ -25,14 +25,10 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D myRigidbody;
     // Variable guardar las animaciones.
     Animator myAnimator;
-    
     BoxCollider2D myFeetCollider;
-    
     CapsuleCollider2D myBodyCollider;
-
     bool isAlive = true;
     
-    // Start is called before the first frame update
     void Start()
     {
         // Instancias
@@ -40,11 +36,9 @@ public class PlayerMovement : MonoBehaviour
         myAnimator = GetComponent<Animator>();
         myBodyCollider = GetComponent<CapsuleCollider2D>();
         myFeetCollider = GetComponent<BoxCollider2D>();
-        // Guardamos el valor de la gravedad que está en las físicas.
         gravityScaleAtStart = myRigidbody.gravityScale;
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         if (!isAlive)
