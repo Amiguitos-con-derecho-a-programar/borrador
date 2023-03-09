@@ -5,6 +5,11 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 
+using UnityEngine.Networking;
+using System.Net;
+using System.IO;
+using System.Text;
+
 public class GameSession : MonoBehaviour
 {
     [SerializeField] int playerLives = 3;
@@ -22,6 +27,7 @@ public class GameSession : MonoBehaviour
         }
         else
         {
+            
             DontDestroyOnLoad(gameObject);
         }
     }
@@ -41,6 +47,9 @@ public class GameSession : MonoBehaviour
         }
         else
         {
+            var current = score.ToString();            
+            UnityWebRequest www = UnityWebRequest.Post("http://localhost:4000/send", current);
+            www.Send();
             ResetGameSession();
         }
     }
@@ -50,6 +59,7 @@ public class GameSession : MonoBehaviour
         FindObjectOfType<ScenePersist>().ResetScenePersist();
         SceneManager.LoadScene(0);
         Destroy(gameObject);
+        
     }
 
     public void AddToScore(int pointsToAdd)
