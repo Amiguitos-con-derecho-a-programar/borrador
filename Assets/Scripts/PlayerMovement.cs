@@ -16,8 +16,8 @@ public class PlayerMovement : MonoBehaviour
     // Variable para guardar la gravedad que hay en el juego.
     [SerializeField] float gravityScaleAtStart;
     [SerializeField] Vector2 deathKick = new Vector2(10f, 10f);
-    [SerializeField] GameObject bullet;
-    [SerializeField] Transform gun;
+    // [SerializeField] GameObject bullet;
+                                        // [SerializeField] Transform gun;
     
     // Variable para guardar el movimiento del jugador.
     Vector2 moveInput;
@@ -52,15 +52,15 @@ public class PlayerMovement : MonoBehaviour
         Die();
     }
 
-    void OnFire(InputValue value)
-    {
-        if (!isAlive)
-        {
-            return;
-        }
-
-        Instantiate(bullet, gun.position, transform.rotation);
-    }
+    // void OnFire(InputValue value)
+    // {
+    //     if (!isAlive)
+    //     {
+    //         return;
+    //     }
+    //
+    //     Instantiate(bullet, gun.position, transform.rotation);
+    // }
 
     void OnMove(InputValue value)
     {

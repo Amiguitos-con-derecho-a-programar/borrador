@@ -6,16 +6,17 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    [SerializeField] float bulletSpeed = 20f;
+    [SerializeField] float bulletSpeed = 1f;
     Rigidbody2D myRigidbody2D;
-    PlayerMovement player;
-    float xSpeed;
+   // PlayerMovement player;
+   
+    float xSpeed = 1F;
     
     void Start()
     {
         myRigidbody2D = GetComponent<Rigidbody2D>();
-        player = FindObjectOfType<PlayerMovement>();
-        xSpeed = player.transform.localScale.x * bulletSpeed;
+        
+        xSpeed = transform.localScale.x * bulletSpeed;
     }
     
     void Update()
