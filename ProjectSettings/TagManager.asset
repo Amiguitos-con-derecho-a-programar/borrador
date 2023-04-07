@@ -22,7 +22,7 @@ TagManager:
   - Bullets
   - Exit
   - Interactables
-  - 
+  - World
   - 
   - 
   - 
@@ -59,6 +59,9 @@ TagManager:
     locked: 0
   - name: Interactables
     uniqueID: 4041587675
+    locked: 0
+  - name: World
+    uniqueID: 2973286513
     locked: 0
   - name: Player
     uniqueID: 235499197

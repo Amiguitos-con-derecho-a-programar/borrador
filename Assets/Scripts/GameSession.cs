@@ -139,7 +139,7 @@ public class GameSession : MonoBehaviour
             }
         }
 
-        if (estasMuerto == false && estasVivo==true)
+        if (estasMuerto == false && estasVivo == true)
         {
             if (Input.GetKeyDown(KeyCode.X))
             {
