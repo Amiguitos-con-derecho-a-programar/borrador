@@ -8,12 +8,12 @@ using System.Collections;
 using TMPro;
 using Unity.VisualScripting;
 
-public class Dialogue02 : MonoBehaviour
-{
+public class Dialogue03 : MonoBehaviour
+{   
     BoxCollider2D myTextCollider;
     
 
-    public GameObject dialogo02;
+    public GameObject dialogo03;
     private string frase1= "XXX ";
     private string frase2= "YYY ";
     private string frase3= "ZZZ ";
@@ -23,26 +23,26 @@ public class Dialogue02 : MonoBehaviour
     private int currentIndex = 0;
     [SerializeField] string texto;
 
+    // Start is called before the first frame update
     void Start()
     {
         myTextCollider = GetComponent<BoxCollider2D>();
-        
     }
 
     // Update is called once per frame
     void Update()
     {
-     int numeroDialogo = 2;
+        int numeroDialogo = 2;
         myTextCollider.enabled = true;
         if (myTextCollider.IsTouchingLayers(LayerMask.GetMask("Player")))
         {
-            dialogo02.SetActive(true);
+            dialogo03.SetActive(true);
             escribirFrase(texto);
             pararJuego();
         }
         else
         {
-            dialogo02.SetActive(false);
+            dialogo03.SetActive(false);
         }
 
         void pararJuego()
@@ -52,7 +52,7 @@ public class Dialogue02 : MonoBehaviour
             {
                
                 Time.timeScale = 1f;
-                dialogo02.SetActive(false);
+                dialogo03.SetActive(false);
                 Destroy(gameObject);
             }
         }
@@ -66,5 +66,4 @@ public class Dialogue02 : MonoBehaviour
 
         }
     }
-    
 }
