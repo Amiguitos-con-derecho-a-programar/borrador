@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 141715240428228984}
   - component: {fileID: 303506270925534255}
   - component: {fileID: 8902547308788659348}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Cake
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,8 +93,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -253379621
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 570310039, guid: 62f0afea545b6fa46946ce7646ae719b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -119,7 +119,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f46f0b340d1f9ec46966c3681af2e686, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinPickupSFX: {fileID: 0}
   livesForPickup: 1
 --- !u!70 &8902547308788659348
 CapsuleCollider2D:
@@ -131,7 +130,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

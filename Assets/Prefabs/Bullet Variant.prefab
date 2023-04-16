@@ -7,6 +7,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8014693517263064129, guid: d7a32e7ff67c6b745afd5223416e8e8c, type: 3}
+      propertyPath: m_Size.x
+      value: 0.43782425
+      objectReference: {fileID: 0}
+    - target: {fileID: -8014693517263064129, guid: d7a32e7ff67c6b745afd5223416e8e8c, type: 3}
+      propertyPath: m_Size.y
+      value: 0.4378244
+      objectReference: {fileID: 0}
+    - target: {fileID: -8014693517263064129, guid: d7a32e7ff67c6b745afd5223416e8e8c, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.00452137
+      objectReference: {fileID: 0}
+    - target: {fileID: -8014693517263064129, guid: d7a32e7ff67c6b745afd5223416e8e8c, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.031946704
+      objectReference: {fileID: 0}
+    - target: {fileID: -8014693517263064129, guid: d7a32e7ff67c6b745afd5223416e8e8c, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -4681117638844461422, guid: d7a32e7ff67c6b745afd5223416e8e8c, type: 3}
       propertyPath: bulletSpeed
       value: 5
@@ -27,9 +47,25 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1950334666673044914, guid: d7a32e7ff67c6b745afd5223416e8e8c, type: 3}
+      propertyPath: m_SortingLayer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1950334666673044914, guid: d7a32e7ff67c6b745afd5223416e8e8c, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 2128870511
+      objectReference: {fileID: 0}
     - target: {fileID: 5225247399902030832, guid: d7a32e7ff67c6b745afd5223416e8e8c, type: 3}
       propertyPath: m_Name
       value: Bullet Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 5225247399902030832, guid: d7a32e7ff67c6b745afd5223416e8e8c, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5225247399902030832, guid: d7a32e7ff67c6b745afd5223416e8e8c, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 7356892507448492328, guid: d7a32e7ff67c6b745afd5223416e8e8c, type: 3}
       propertyPath: m_RootOrder
@@ -45,11 +81,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7356892507448492328, guid: d7a32e7ff67c6b745afd5223416e8e8c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -19.333494
+      value: 26.222149
       objectReference: {fileID: 0}
     - target: {fileID: 7356892507448492328, guid: d7a32e7ff67c6b745afd5223416e8e8c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.1603011
+      value: 4.4135084
       objectReference: {fileID: 0}
     - target: {fileID: 7356892507448492328, guid: d7a32e7ff67c6b745afd5223416e8e8c, type: 3}
       propertyPath: m_LocalPosition.z

@@ -13,11 +13,7 @@ public class Dialogues : MonoBehaviour
 {
     BoxCollider2D myTextCollider;
     public GameObject dialogo01;
-    
-    private string frase1= "XXX ";
-    private string frase2= "YYY ";
-    private string frase3= "ZZZ ";
-    
+   
 
     public bool freezeGame = false;
 

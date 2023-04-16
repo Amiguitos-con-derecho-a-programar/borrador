@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - Carryable
   layers:
   - Default
   - TransparentFX
@@ -23,13 +24,13 @@ TagManager:
   - Exit
   - Interactables
   - World
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Carryable
+  - LurchRel
+  - Boss
+  - Obstacules
+  - PlataformDestroy
+  - Action
+  - Door
   - 
   - 
   - 
@@ -60,15 +61,15 @@ TagManager:
   - name: Interactables
     uniqueID: 4041587675
     locked: 0
+  - name: Exit
+    uniqueID: 2231457821
+    locked: 0
   - name: World
     uniqueID: 2973286513
-    locked: 0
-  - name: Player
-    uniqueID: 235499197
     locked: 0
   - name: Enemies
     uniqueID: 2128870511
     locked: 0
-  - name: Exit
-    uniqueID: 2231457821
+  - name: Player
+    uniqueID: 235499197
     locked: 0

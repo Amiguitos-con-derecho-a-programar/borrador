@@ -15,6 +15,7 @@ public class LeverPickup : MonoBehaviour
             Destroy(gameObject);
             palancaIMG.SetActive(true);
             llaveSalidaPalanca = true;
+            
         }
     }
 }

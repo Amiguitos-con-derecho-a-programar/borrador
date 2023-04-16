@@ -19,6 +19,13 @@ public class PlayerMovement : MonoBehaviour
     // [SerializeField] GameObject bullet;
                                         // [SerializeField] Transform gun;
     
+    // Empujar objeto
+    public float pickupRange = 0.5f; // Rango de distancia en la que el jugador puede recoger el objeto
+    public KeyCode pickupButton; // Botón que el jugador debe presionar para recoger y soltar el objeto
+    private GameObject carriedObject; // Objeto que el jugador está llevando
+
+    
+    
     // Variable para guardar el movimiento del jugador.
     Vector2 moveInput;
     // Variable para guardar las físicas.
@@ -45,7 +52,29 @@ public class PlayerMovement : MonoBehaviour
         {
             return;
         }
+        
+        
+        if (Input.GetKeyDown(pickupButton) && !carriedObject) {
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, pickupRange);
 
+            foreach (Collider2D collider in colliders) {
+                if (collider.CompareTag("Carryable")) {
+                    carriedObject = collider.gameObject;
+                    carriedObject.GetComponent<moveObject>().isBeingCarried = true;
+                    carriedObject.GetComponent<Rigidbody2D>().isKinematic = true;
+                    carriedObject.transform.parent = transform;
+                    break;
+                }
+            }
+        }
+        // Si el jugador está llevando un objeto y presiona el botón de soltar, suelta el objeto
+        else if (Input.GetKeyDown(pickupButton) && carriedObject) {
+            carriedObject.GetComponent<moveObject>().isBeingCarried = false;
+            carriedObject.GetComponent<Rigidbody2D>().isKinematic = false;
+            carriedObject.transform.parent = null;
+            carriedObject = null;
+        }
+        
         Run();
         FlipSprite();
         ClimbLadder();
@@ -68,7 +97,7 @@ public class PlayerMovement : MonoBehaviour
         {
             return;
         }
-        
+        myAnimator.SetBool("isJumping", false);
         moveInput = value.Get<Vector2>();
         Debug.Log(moveInput);
     }
@@ -80,16 +109,21 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
         
-        if (!myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Ground")))
+        if (!myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Ground", "Obstacules", "PlataformDestroy", "LurchRel")))
         {
+            
             return;
         }
 
         if (value.isPressed)
         {
             myRigidbody.velocity += new Vector2(0f, jumpSpeed);
-            myAnimator.SetTrigger("isJumping");
+            myAnimator.SetBool("isJumping", true);
             
+        }
+        else if(!value.isPressed)
+        {
+            myAnimator.SetBool("isJumping", false);
         }
     }
 
@@ -131,7 +165,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Die()
     {
-        if (myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemies", "Hazards")))
+        if (myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemies", "Hazards", "Boss")))
         {
             isAlive = false;
             myAnimator.SetTrigger("Dying");
@@ -139,4 +173,6 @@ public class PlayerMovement : MonoBehaviour
             FindObjectOfType<GameSession>().ProcessPlayerDeath();
         }
     }
+ 
+
 }

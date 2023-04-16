@@ -118,8 +118,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 235499197
-  m_SortingLayer: 7
-  m_SortingOrder: 0
+  m_SortingLayer: 10
+  m_SortingOrder: -1
   m_Sprite: {fileID: -1154203767, guid: 8c3d4740eff7daa4d869aa9b6a03d646, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -215,8 +215,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 524feaab601b5ae41b21082492b91693, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runSpeed: 10
+  runSpeed: 5
   jumpSpeed: 12
   climbSpeed: 5
   gravityScaleAtStart: 5
   deathKick: {x: 10, y: 10}
+  pickupRange: 0.5
+  pickupButton: 0
