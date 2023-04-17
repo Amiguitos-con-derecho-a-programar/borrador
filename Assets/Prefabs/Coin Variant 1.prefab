@@ -7,17 +7,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 9099348197043891008, guid: 6195dd3da8f15f941963532a9e141ad3, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 00ac783347a517246be077e57735c631, type: 3}
     - target: {fileID: 9099348197500462628, guid: 6195dd3da8f15f941963532a9e141ad3, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 51675069, guid: 2db09e75975225e43921de3af7699039, type: 3}
+    - target: {fileID: 9099348197500462629, guid: 6195dd3da8f15f941963532a9e141ad3, type: 3}
+      propertyPath: coinPickupSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 00ac783347a517246be077e57735c631, type: 3}
+    - target: {fileID: 9099348197500462629, guid: 6195dd3da8f15f941963532a9e141ad3, type: 3}
+      propertyPath: pointsForCoinPickup
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 9099348197500462630, guid: 6195dd3da8f15f941963532a9e141ad3, type: 3}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 5b25f1fc0418cb542a5368c70723d6b9, type: 2}
     - target: {fileID: 9099348197500462632, guid: 6195dd3da8f15f941963532a9e141ad3, type: 3}
       propertyPath: m_Name
-      value: Coin
+      value: Coin Variant 1
       objectReference: {fileID: 0}
     - target: {fileID: 9099348197500462633, guid: 6195dd3da8f15f941963532a9e141ad3, type: 3}
       propertyPath: m_RootOrder
@@ -25,15 +37,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9099348197500462633, guid: 6195dd3da8f15f941963532a9e141ad3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.29
+      value: -9.554943
       objectReference: {fileID: 0}
     - target: {fileID: 9099348197500462633, guid: 6195dd3da8f15f941963532a9e141ad3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.87
+      value: -0.24194452
       objectReference: {fileID: 0}
     - target: {fileID: 9099348197500462633, guid: 6195dd3da8f15f941963532a9e141ad3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.029043548
+      value: 0.058087096
       objectReference: {fileID: 0}
     - target: {fileID: 9099348197500462633, guid: 6195dd3da8f15f941963532a9e141ad3, type: 3}
       propertyPath: m_LocalRotation.w

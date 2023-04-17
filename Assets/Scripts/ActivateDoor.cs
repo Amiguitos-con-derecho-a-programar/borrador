@@ -6,13 +6,16 @@ public class ActivateDoor : MonoBehaviour
 {
 
    [SerializeField] GameObject plataforma;
+
        BoxCollider2D myTextCollider;
+       
        public static bool ObjectDestroy = false;
            
        
        void Start()
        {
            myTextCollider = GetComponent<BoxCollider2D>();
+           
        }
    
    
@@ -48,9 +51,10 @@ public class ActivateDoor : MonoBehaviour
            ObjectDestroy = false;
        }
    
-       void Destruir(GameObject plataforma)
+       void Destruir(GameObject plataforma )
        {
            Destroy(plataforma);
            ObjectDestroy = true;
+           
        }
 }

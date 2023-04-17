@@ -9,6 +9,7 @@ public class EnemyBoss : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     Rigidbody2D myRigidbody;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +25,7 @@ public class EnemyBoss : MonoBehaviour
     
     void Run()
     {
+        
         transform.position = new Vector2(Mathf.MoveTowards(transform.position.x, player.position.x, speed * Time.deltaTime), transform.position.y);
 
     }

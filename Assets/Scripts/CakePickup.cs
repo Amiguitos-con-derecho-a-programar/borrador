@@ -5,6 +5,7 @@ using UnityEngine;
 public class CakePickup : MonoBehaviour
 {
 
+    [SerializeField] AudioClip PickupSFX;
     [SerializeField] int livesForPickup = 1;
 
     bool wasCollected = false; 
@@ -13,6 +14,7 @@ public class CakePickup : MonoBehaviour
         if (other.tag == "Player" && !wasCollected)
         {
             wasCollected = true;
+            AudioSource.PlayClipAtPoint( PickupSFX, Camera.main.transform.position );
             FindObjectOfType<GameSession>().AddToLife(livesForPickup);
            
             Destroy(gameObject);

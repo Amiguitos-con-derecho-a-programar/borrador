@@ -119,6 +119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f46f0b340d1f9ec46966c3681af2e686, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PickupSFX: {fileID: 8300000, guid: 43b2f82546f4cf84d8a3c948b47dd18e, type: 3}
   livesForPickup: 1
 --- !u!70 &8902547308788659348
 CapsuleCollider2D:

@@ -7,9 +7,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2444987245525338824, guid: 8ec411459d3910c45bb120b8591f94a7, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 00ac783347a517246be077e57735c631, type: 3}
     - target: {fileID: 2444987245931349920, guid: 8ec411459d3910c45bb120b8591f94a7, type: 3}
       propertyPath: m_Name
-      value: Coin Variant
+      value: Coin Variant Variant
       objectReference: {fileID: 0}
     - target: {fileID: 2444987245931349921, guid: 8ec411459d3910c45bb120b8591f94a7, type: 3}
       propertyPath: m_RootOrder
@@ -25,15 +29,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2444987245931349921, guid: 8ec411459d3910c45bb120b8591f94a7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.154848
+      value: -9.70371
       objectReference: {fileID: 0}
     - target: {fileID: 2444987245931349921, guid: 8ec411459d3910c45bb120b8591f94a7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.4684434
+      value: 0.09278071
       objectReference: {fileID: 0}
     - target: {fileID: 2444987245931349921, guid: 8ec411459d3910c45bb120b8591f94a7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.5784478
+      value: -0.54940426
       objectReference: {fileID: 0}
     - target: {fileID: 2444987245931349921, guid: 8ec411459d3910c45bb120b8591f94a7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -67,6 +71,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -602231732, guid: f6577c36b4133524f9a4c6e87c245550, type: 3}
+    - target: {fileID: 2444987245931349933, guid: 8ec411459d3910c45bb120b8591f94a7, type: 3}
+      propertyPath: coinPickupSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 00ac783347a517246be077e57735c631, type: 3}
+    - target: {fileID: 2444987245931349933, guid: 8ec411459d3910c45bb120b8591f94a7, type: 3}
+      propertyPath: pointsForCoinPickup
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 2444987245931349934, guid: 8ec411459d3910c45bb120b8591f94a7, type: 3}
       propertyPath: m_Controller
       value: 

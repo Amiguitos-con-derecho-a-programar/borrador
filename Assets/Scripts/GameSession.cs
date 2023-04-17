@@ -9,6 +9,7 @@ using UnityEngine.Networking;
 using System.Net;
 using System.IO;
 using System.Text;
+using Unity.VisualScripting;
 
 public class GameSession : MonoBehaviour
 {
@@ -53,7 +54,11 @@ public class GameSession : MonoBehaviour
         Update();
         livesText.text = playerLives.ToString();
         scoresText.text = score.ToString();
+
+
     }
+    
+    
 
     public void ProcessPlayerDeath()
     {
@@ -64,14 +69,63 @@ public class GameSession : MonoBehaviour
         }
         else
         {
-            var current = score.ToString();
-            UnityWebRequest www = UnityWebRequest.Post("http://localhost:4000/send", current);
-            www.Send();
+            mandarDatos();
             estasVivo = false;
             estasMuerto = true;
             canvasMenuF.SetActive(true);
             Update();
         }
+    }
+
+    void mandarDatos()
+    {
+        var current = score.ToString();
+        string name = "Kike";
+        WWWForm form = new WWWForm(); 
+        form.AddField("nickname", name); 
+        form.AddField("score", current); 
+        UnityWebRequest www = UnityWebRequest.Post("https://scutellaria-api.glitch.me/createUser", form); 
+       
+
+
+        // string jsondata = JsonUtility.ToJson(data);
+        //
+        // Debug.Log("data: " + data);
+        // Debug.Log("jsondata: " + jsondata);
+        // Debug.Log("current: " + current);
+            
+      //  UnityWebRequest www = new UnityWebRequest("https://scutellaria-api.glitch.me/createUser", "POST");
+            
+        //byte[] bodyRaw = Encoding.UTF8.GetBytes(jsondata);
+        // www.uploadHandler = new UploadHandlerRaw(bodyRaw);
+        // www.downloadHandler = new DownloadHandlerBuffer();
+        // www.SetRequestHeader("Content-Type", "application/json");
+        // www.SetRequestHeader("Content-Length", bodyRaw.Length.ToString());
+        
+        StartCoroutine(sendJsonData(www));
+
+    }
+    
+   
+
+
+    IEnumerator sendJsonData(UnityWebRequest www)
+    {
+        yield return www.SendWebRequest();
+        
+        // Envía la solicitud y espera la respuesta
+        // www.useHttpContinue = false;
+        // www.chunkedTransfer = false;
+        // yield return www.SendWebRequest();
+        // if (www.result != UnityWebRequest.Result.Success)
+        // {
+        //     Debug.Log(www.error);
+        // }
+        // else
+        // {
+        //     Debug.Log(www.downloadHandler.text);
+        // }
+
     }
 
     public void ResetGameSession()

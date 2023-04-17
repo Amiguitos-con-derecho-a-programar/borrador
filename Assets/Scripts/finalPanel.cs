@@ -41,6 +41,7 @@ public class finalPanel : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.X))
         {
             Time.timeScale = 1f;
+            
             FindObjectOfType<GameSession>().ResetGameSession();
             
 
